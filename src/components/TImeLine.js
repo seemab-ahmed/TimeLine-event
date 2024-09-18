@@ -18,64 +18,23 @@ import JorneyImage from "../assets/Journey of Light.png";
 
 function ProgramSection() {
 
-  // const eventsData = [
-  //   {
-  //     startTime: "09:00 AM",
-  //     endTime: "10:00 AM",
-  //     title: "Breathwork With Walid Aboulnaga",
-  //     location: "DOME",
-  //     images: [CalligaraphyImage],
-  //   },
-  //   {
-  //     startTime: "10:30 AM",
-  //     endTime: "11:30 AM",
-  //     title: "Handpan with Anas",
-  //     location: "Market Place",
-  //     images: [HandPanwithAnas],
-  //   },
-  //   {
-  //     startTime: "11:00 AM",
-  //     endTime: "12:30 PM",
-  //     title: "Anas Handpan Orchestra Workshop",
-  //     location: "DOME",
-  //     images: [AnasHandPan , Illumination],
-  //   },
-  //   {
-  //     startTime: "01:00 PM",
-  //     endTime: "02:00 PM",
-  //     title: "Calligraphy Workshop with Fatma Bin Hendi",
-  //     location: "DOME",
-  //     images: [CalligaraphyImage],
-  //   },
-  //   {
-  //     startTime: "1:30 PM",
-  //     endTime: "02:30 PM",
-  //     title: "Poetry by Nujoom Al-Ghanem",
-  //     location: "DOME",
-  //     images: [PoetryByNujoom],
-  //   },
-  // ]
-
-
-// ===================================================
-
   const eventsData = [
     {
       startTime: "09:00 AM",
-      endTime: "10:00 AM",
+      endTime: "11:00 AM",
       title: "Breathwork With Walid Aboulnaga",
       location: "DOME",
       images: [CalligaraphyImage],
     },
     {
-      startTime: "10:30 AM",
+      startTime: "11:00 AM",
       endTime: "11:30 AM",
       title: "Handpan with Anas",
       location: "Market Place",
       images: [HandPanwithAnas],
     },
     {
-      startTime: "11:00 AM",
+      startTime: "11:30 AM",
       endTime: "12:30 PM",
       title: "Anas Handpan Orchestra Workshop",
       location: "DOME",
@@ -189,6 +148,7 @@ function ProgramSection() {
   ];
   
   
+
 const doEventsOverlap = (event1, event2) => {
   const convertTo24Hour = (time) => {
     const [hour, minute, period] = time.split(/[:\s]/);
@@ -211,6 +171,7 @@ const doEventsOverlap = (event1, event2) => {
   const event2Start = start2.hours * 60 + start2.minutes;
   const event2End = end2.hours * 60 + end2.minutes;
 
+  // Check for overlap
   return event1End > event2Start && event2End > event1Start;
 };
 
@@ -239,14 +200,14 @@ const calculateDuration = (start, end) => {
 
 const getEventHeight = (startTime, endTime) => {
   const duration = calculateDuration(startTime, endTime);
-  const heightPerMinute = 120 / 30; 
+  const heightPerMinute = 120 / 30; // 120px for 30 minutes
   return duration * heightPerMinute;
 };
 
 
 const calculateImageSize = (startTime, endTime) => {
-  const duration = calculateDuration(startTime, endTime); 
-  const imageSize = duration >= 60 ? 160 : (duration / 60) * 160;
+  const duration = calculateDuration(startTime, endTime); // Calculate duration in minutes
+  const imageSize = duration >= 60 ? 160 : (duration / 60) * 160; // Proportional size for events < 1 hour
   return imageSize;
 };
 
@@ -262,31 +223,31 @@ const renderEventData = () => {
             const previousEvent = index > 0 ? eventsData[index - 1] : null;
             const previousEventHeight = index > 0 ? getEventHeight(previousEvent.startTime, previousEvent.endTime) : 0;
           
-            
+            // Check for overlaps with the previous event
             if (previousEvent && doEventsOverlap(previousEvent, event)) {
-              topOffset = -previousEventHeight - 26; 
+              topOffset = -previousEventHeight - 26; // Adjust top offset if events overlap
             }
           
-            
+            // Check if the start time or end time matches the previous event
             const displayStartTime = !previousEvent || previousEvent.startTime !== event.startTime;
             const displayEndTime = !previousEvent || previousEvent.endTime !== event.endTime;
-            
+            // Check if the event's start time is the same as the previous event's end time
             const isContiguous = previousEvent && previousEvent.endTime === event.startTime;
 
 
-            
+            // Calculate gap between events
             let gap = 0;
             if (previousEvent) {
               const gapDuration = calculateDuration(previousEvent.endTime, event.startTime);
-              const gapHeight = (gapDuration / 30) * 120; 
+              const gapHeight = (gapDuration / 30) * 120; // Convert gap to pixel height
               gap = gapHeight > 0 ? gapHeight : 0;
 
               if (previousEvent && doEventsOverlap(previousEvent, event)) {
-                gap=0; 
+                gap=0; // Adjust top offset if events overlap
               }
             }
 
-            topOffset = gap; 
+            topOffset = gap; // Set top offset based on the gap
 
             const renderElement = <div
                 key={index}
@@ -294,7 +255,7 @@ const renderEventData = () => {
                 style={{
                   height: `${eventHeight}px`,
                   position: "relative",
-                  top: `${topOffset}px`, 
+                  top: `${topOffset}px`, // Adjust top position dynamically for overlapping events
                 }}
               >
                 {displayStartTime && !isContiguous && <div className="time-label">{event.startTime}</div>}
@@ -352,7 +313,7 @@ const renderEventContent = (event, imageSize) => {
     </>
   );
 };
-
+ 
 
 
 
@@ -389,5 +350,3 @@ const renderEventContent = (event, imageSize) => {
 }
 
 export default ProgramSection;
-
-
