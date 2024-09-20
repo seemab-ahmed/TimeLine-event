@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState , useEffect } from 'react';
 import "../App.css";
 import Breathwork from "../assets/breath-work.png";
-import { ReactComponent as ProgramImage } from "../assets/Program.svg";
+import {ReactComponent as ProgramImage} from '../assets/Program.svg';
 import maryMalifarges from "../assets/Mary Malifarges.png";
 import SennyCamara from "../assets/SennyCamara.png";
 import HandPanwithAnas from "../assets/handPan.png";
@@ -18,7 +18,9 @@ import JorneyImage from "../assets/Journey of Light.png";
 
 function ProgramSection() {
   const eventsData = [
+    // Day 1: 2024-11-22
     {
+      date: "2024-11-22",
       startTime: "09:00 AM",
       endTime: "11:00 AM",
       title: "Breathwork With Walid Aboulnaga",
@@ -26,6 +28,7 @@ function ProgramSection() {
       images: [CalligaraphyImage],
     },
     {
+      date: "2024-11-22",
       startTime: "11:00 AM",
       endTime: "11:30 AM",
       title: "Handpan with Anas",
@@ -33,6 +36,7 @@ function ProgramSection() {
       images: [HandPanwithAnas],
     },
     {
+      date: "2024-11-22",
       startTime: "11:30 AM",
       endTime: "12:30 PM",
       title: "Anas Handpan Orchestra Workshop",
@@ -40,6 +44,7 @@ function ProgramSection() {
       images: [AnasHandPan, Illumination],
     },
     {
+      date: "2024-11-22",
       startTime: "01:00 PM",
       endTime: "02:00 PM",
       title: "Calligraphy Workshop with Fatma Bin Hendi",
@@ -47,6 +52,7 @@ function ProgramSection() {
       images: [CalligaraphyImage],
     },
     {
+      date: "2024-11-22",
       startTime: "1:30 PM",
       endTime: "02:30 PM",
       title: "Poetry by Nujoom Al-Ghanem",
@@ -54,6 +60,7 @@ function ProgramSection() {
       images: [PoetryByNujoom],
     },
     {
+      date: "2024-11-22",
       startTime: "2:30 PM",
       endTime: "03:30 PM",
       title: "Poetry by Nujoom Al-Ghanem",
@@ -61,12 +68,14 @@ function ProgramSection() {
       images: [maryMalifarges],
     },
     {
+      date: "2024-11-22",
       startTime: "03:30 PM",
       endTime: "04:00 PM",
       title: "Art Tour",
       location: "DOME",
     },
     {
+      date: "2024-11-22",
       startTime: "04:00 PM",
       endTime: "04:30 PM",
       title: "Hassan Hakoum, Gnawa",
@@ -74,6 +83,7 @@ function ProgramSection() {
       images: [HasanHakmoun],
     },
     {
+      date: "2024-11-22",
       startTime: "04:30 PM",
       endTime: "05:30 PM",
       title: "Illumination & Calligraphy Workshop with Mohamed Mkhaiyar",
@@ -81,7 +91,9 @@ function ProgramSection() {
       images: [Illumination],
     },
 
+    // Day 2: 2024-11-23
     {
+      date: "2024-11-23",
       startTime: "05:30 PM",
       endTime: "06:00 PM",
       title: "Sandu",
@@ -89,14 +101,15 @@ function ProgramSection() {
       images: [SanduImage],
     },
     {
+      date: "2024-11-23",
       startTime: "06:00 PM",
       endTime: "07:00 PM",
       title: "Shiny Camara & Art Performers: Many Colors of the UAE",
       location: "Market Place",
       images: [SennyCamara],
     },
-
     {
+      date: "2024-11-23",
       startTime: "07:00 PM",
       endTime: "07:30 PM",
       title: "Babaka Blue & Shabbi Band",
@@ -104,6 +117,7 @@ function ProgramSection() {
       images: [BarakaBand],
     },
     {
+      date: "2024-11-23",
       startTime: "07:30 PM",
       endTime: "08:00 PM",
       title: "Semma Workshop with Fatma",
@@ -111,6 +125,7 @@ function ProgramSection() {
       images: [Seemawirling],
     },
     {
+      date: "2024-11-23",
       startTime: "08:00 PM",
       endTime: "09:00 PM",
       title: "Athan followed by Heritage Band Tour",
@@ -118,6 +133,7 @@ function ProgramSection() {
       images: [Heritage],
     },
     {
+      date: "2024-11-23",
       startTime: "09:30 PM",
       endTime: "10:30 PM",
       title: "Calligraphy Workshop with Julien Breton",
@@ -125,6 +141,17 @@ function ProgramSection() {
       images: [CalligaraphyImage],
     },
     {
+      date: "2024-11-23",
+      startTime: "10:30 PM",
+      endTime: "11:30 PM",
+      title: "Athan followed by Heritage Band Tour",
+      location: "Heritage Village",
+      images: [Heritage],
+    },
+
+    // Day 3: 2024-11-24
+    {
+      date: "2024-11-24",
       startTime: "10:00 PM",
       endTime: "11:00 PM",
       title: "Contemporary Heritage Band Tour",
@@ -132,20 +159,37 @@ function ProgramSection() {
       images: [Breathwork],
     },
     {
+      date: "2024-11-24",
       startTime: "11:00 PM",
       endTime: "11:30 PM",
       title: "Art Tour",
       location: "DOME",
     },
     {
+      date: "2024-11-24",
       startTime: "11:30 PM",
       endTime: "12:30 AM",
       title: "Journey of Light",
       location: "Market Place",
       images: [JorneyImage],
-    },
+    }
   ];
 
+  const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 80 / 30 : 120 / 30);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setHeightPerMinute(window.innerWidth <= 768 ? 80 / 30 : 120 / 30);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  // Helper function to check if two events overlap
   const doEventsOverlap = (event1, event2) => {
     const convertTo24Hour = (time) => {
       const [hour, minute, period] = time.split(/[:\s]/);
@@ -172,6 +216,7 @@ function ProgramSection() {
     return event1End > event2Start && event2End > event1Start;
   };
 
+  // Helper function to calculate duration in minutes
   const calculateDuration = (start, end) => {
     const convertTo24Hour = (time) => {
       const [hour, minute, period] = time.split(/[:\s]/);
@@ -195,7 +240,6 @@ function ProgramSection() {
 
   const getEventHeight = (startTime, endTime) => {
     const duration = calculateDuration(startTime, endTime);
-    const heightPerMinute = 120 / 30; // 120px for 30 minutes
     return duration * heightPerMinute;
   };
 
@@ -205,50 +249,47 @@ function ProgramSection() {
     return imageSize;
   };
 
-  const renderEventData = () => {
+  const renderEventData = (day) => {
+    const filteredEvents = eventsData.filter((event) => event.date === day);
     const renderEventDataElements = [];
-    for (let index = 0; index < eventsData.length; index++) {
-      let event = eventsData[index];
+    for (let index = 0; index < filteredEvents.length; index++) {
+      let event = filteredEvents[index];
       const eventHeight = getEventHeight(event.startTime, event.endTime);
       const imageSize = calculateImageSize(event.startTime, event.endTime);
 
       let topOffset = 0;
-      const previousEvent = index > 0 ? eventsData[index - 1] : null;
+      const previousEvent = index > 0 ? filteredEvents[index - 1] : null;
       const previousEventHeight =
         index > 0
           ? getEventHeight(previousEvent.startTime, previousEvent.endTime)
           : 0;
 
-      // Check for overlaps with the previous event
       if (previousEvent && doEventsOverlap(previousEvent, event)) {
-        topOffset = -previousEventHeight - 26; // Adjust top offset if events overlap
+        topOffset = -previousEventHeight - 26;
       }
 
-      // Check if the start time or end time matches the previous event
       const displayStartTime =
         !previousEvent || previousEvent.startTime !== event.startTime;
       const displayEndTime =
         !previousEvent || previousEvent.endTime !== event.endTime;
-      // Check if the event's start time is the same as the previous event's end time
       const isContiguous =
         previousEvent && previousEvent.endTime === event.startTime;
 
-      // Calculate gap between events
       let gap = 0;
       if (previousEvent) {
         const gapDuration = calculateDuration(
           previousEvent.endTime,
           event.startTime
         );
-        const gapHeight = (gapDuration / 30) * 120; // Convert gap to pixel height
+        const gapHeight = (gapDuration / 30) * 120;
         gap = gapHeight > 0 ? gapHeight : 0;
 
         if (previousEvent && doEventsOverlap(previousEvent, event)) {
-          gap = 0; // Adjust top offset if events overlap
+          gap = 0;
         }
       }
 
-      topOffset = gap; // Set top offset based on the gap
+      topOffset = gap;
 
       const renderElement = (
         <div
@@ -257,7 +298,7 @@ function ProgramSection() {
           style={{
             height: `${eventHeight}px`,
             position: "relative",
-            top: `${topOffset}px`, // Adjust top position dynamically for overlapping events
+            top: `${topOffset}px`,
           }}
         >
           {displayStartTime && !isContiguous && (
@@ -267,8 +308,8 @@ function ProgramSection() {
             {renderEventContent(event, imageSize)}
           </div>
           {event.images &&
-            event.startTime === eventsData[index + 1]?.startTime &&
-            renderEventContent(eventsData[index + 1], imageSize)}
+            event.startTime === filteredEvents[index + 1]?.startTime &&
+            renderEventContent(filteredEvents[index + 1], imageSize)}
           {displayEndTime && <div className="time-label2">{event.endTime}</div>}
         </div>
       );
@@ -276,7 +317,7 @@ function ProgramSection() {
       renderEventDataElements.push(renderElement);
       if (
         event.images &&
-        event.startTime === eventsData[index + 1]?.startTime
+        event.startTime === filteredEvents[index + 1]?.startTime
       ) {
         index++;
       }
@@ -316,31 +357,38 @@ function ProgramSection() {
       </>
     );
   };
-
+  const days = [...new Set(eventsData.map((event) => event.date))];
+  const [activeTab, setActiveTab] = useState(0);
+  const dates = days.map((day) => new Date(day).toDateString());
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+  };
   return (
     <section className="program-section">
       <div className="container">
         <ProgramImage className="programe_image" />
         <ul className="day-list">
-          <li className="day-list-iem">
-            <a href="/" className="day-link">
-              Day 1
-            </a>
-          </li>
-          <li className="day-list-iem">
-            <a href="/" className="day-link active">
-              Day 2
-            </a>
-          </li>
-          <li className="day-list-iem">
-            <a href="/" className="day-link">
-              Day 3
-            </a>
-          </li>
+          {days.map((day, index) => (
+            <li
+              key={index}
+              className={`day-list-item ${activeTab === index ? "active" : ""}`}
+            >
+              <a
+                href={`#day${index + 1}`}
+                className="day-link"
+                onClick={() => handleTabClick(index)}
+              >
+                {`Day ${index + 1}`}
+              </a>
+            </li>
+          ))}
         </ul>
-        <h2 className="full-date">Saturday, November 23, 2024</h2>
-
-        <div className="timeline">{renderEventData()}</div>
+        <h2 className="full-date">{dates[activeTab + 1]}</h2>
+        <div className="tab-content">
+          <div id={`day${activeTab}`}>
+            <div className="timeline">{renderEventData(days[activeTab])}</div>
+          </div>
+        </div>
       </div>
     </section>
   );
