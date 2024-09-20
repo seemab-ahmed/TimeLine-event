@@ -97,6 +97,7 @@ h1 {
   background-color: #efba6b1a;
   margin-bottom: 24px;
   display: flex;
+
 }
 
 .timeline-entry.left {
@@ -209,7 +210,7 @@ h1 {
   color: #731d14;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .event-location {
@@ -240,14 +241,7 @@ h1 {
     font-size: 26px;
     margin-bottom: 94px;
   }
-  .event-info .event-img-wrap {
-    width: 100px !important;
-    height: 100px !important;
-  }
-  .event-info .event-img-wrap img {
-    width: 100px !important;
-    height: 100px !important;
-  }
+  
   .event-title {
     font-size: 22px;
   }
@@ -268,14 +262,7 @@ h1 {
   .event-title {
     font-size: 18px;
   }
-  .event-info .event-img-wrap {
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .event-info .event-img-wrap img {
-    width: 80px !important;
-    height: 80px !important;
-  }
+  
   .event-location {
     font-size: 14px;
   }
@@ -392,14 +379,8 @@ h1 {
     max-width: 30px;
     text-align: right;
   }
-  .event-info .event-img-wrap {
+  .event-info .event-img-wrap  {
     border-radius: 50%;
-    width: 48px !important;
-    height: 48px !important;
-  }
-  .event-info .event-img-wrap img {
-    width: 48px !important;
-    height: 48px !important;
   }
   .event-title {
     font-size: 12px;

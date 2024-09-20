@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react';
 import "../App.css";
-import Breathwork from "../assets/breath-work.png";
+
 import {ReactComponent as ProgramImage} from '../assets/Program.svg';
 import maryMalifarges from "../assets/Mary Malifarges.png";
 import SennyCamara from "../assets/SennyCamara.png";
@@ -15,12 +15,77 @@ import Seemawirling from "../assets/Sema Whirling.png";
 import BarakaBand from "../assets/BarakaBlue&ShadiBand.png";
 import Heritage from "../assets/Heritage band tour.png";
 import JorneyImage from "../assets/Journey of Light.png";
+import Bodour from "../assets/Bodour Al Qasimi_.png";
+import Ziyad from "../assets/Rumi’s Ziyad Sahab.png";
+import JulienBreton from "../assets/Calligraphy lighting Workshop with Julien Breton.png";
+import SamiYusuf from "../assets/Sami Yusuf (1).png";
+import Constantinople from "../assets/Constantinople & Ghalia Benali.png"
+import Farima from "../assets/Farima Berenji.png";
+import RushilQawali from "../assets/AbiSampaRushilOrchestralQawwali.png";
+import Soundimmersion from "../assets/Layer 2.png";
+import FadiRifaai from "../assets/Fadi Rifaai.png";
+import Ensemble from "../assets/Ensemble Khourchid_.png";
+import DhaferYoussef from "../assets/Dhafer Youssef.png";
 
 function ProgramSection() {
   const eventsData = [
-    // Day 1: 2024-11-22
     {
       date: "2024-11-22",
+      startTime: "06:00 PM",
+      endTime: "06:30 PM",
+      title: "Heritage Band - Al Nadba",
+      location: "MAIN STAGE (6:15 pm)",
+      images: [Heritage],
+    },
+    {
+      date: "2024-11-22",
+      startTime: "06:30 PM",
+      endTime: "07:00 PM",
+      title: "Bodour Al Qasimi opening speech ",
+      location: "MAIN STAGE",
+      images: [SennyCamara, Bodour],
+    },
+    {
+      date: "2024-11-22",
+      startTime: "07:00 PM",
+      endTime: "07:30 PM",
+      title: "Athan",
+    },
+    {
+      date: "2024-11-22",
+      startTime: "07:30 PM",
+      endTime: "08:30 PM",
+      title:
+        "Rumi’s Ziyad Sahab & Alifmotion Light",
+      location: "MAIN STAGE",
+      images: [Ziyad, JulienBreton],
+    },
+    {
+      date: "2024-11-22",
+      startTime: "08:30 PM",
+      endTime: "09:30 PM",
+      title: "Art Tour",
+      location: "(A.3)",
+    },
+    {
+      date: "2024-11-22",
+      startTime: "10:00 PM",
+      endTime: "11:00 PM",
+      title: "Sami Yusuf",
+      location: "MAIN STAGE",
+      images: [SamiYusuf],
+    },
+    {
+      date: "2024-11-22",
+      startTime: "11:00 PM",
+      endTime: "12:30 PM",
+      title: "Anas Handpan Orchestra",
+      location: "TREE OF LIFE",
+      images: [AnasHandPan],
+    },
+    // 2nd Day  
+    {
+      date: "2024-11-23",
       startTime: "09:00 AM",
       endTime: "11:00 AM",
       title: "Breathwork With Walid Aboulnaga",
@@ -28,7 +93,7 @@ function ProgramSection() {
       images: [CalligaraphyImage],
     },
     {
-      date: "2024-11-22",
+      date: "2024-11-23",
       startTime: "11:00 AM",
       endTime: "11:30 AM",
       title: "Handpan with Anas",
@@ -36,143 +101,272 @@ function ProgramSection() {
       images: [HandPanwithAnas],
     },
     {
-      date: "2024-11-22",
+      date: "2024-11-23",
       startTime: "11:30 AM",
       endTime: "12:30 PM",
-      title: "Anas Handpan Orchestra Workshop",
-      location: "DOME",
-      images: [AnasHandPan, Illumination],
-    },
-    {
-      date: "2024-11-22",
-      startTime: "01:00 PM",
-      endTime: "02:00 PM",
-      title: "Calligraphy Workshop with Fatma Bin Hendi",
-      location: "DOME",
-      images: [CalligaraphyImage],
-    },
-    {
-      date: "2024-11-22",
-      startTime: "1:30 PM",
-      endTime: "02:30 PM",
-      title: "Poetry by Nujoom Al-Ghanem",
-      location: "DOME",
-      images: [PoetryByNujoom],
-    },
-    {
-      date: "2024-11-22",
-      startTime: "2:30 PM",
-      endTime: "03:30 PM",
-      title: "Poetry by Nujoom Al-Ghanem",
-      location: "DOME",
-      images: [maryMalifarges],
-    },
-    {
-      date: "2024-11-22",
-      startTime: "03:30 PM",
-      endTime: "04:00 PM",
       title: "Art Tour",
-      location: "DOME",
+      location: "(A.3)",
     },
-    {
-      date: "2024-11-22",
-      startTime: "04:00 PM",
-      endTime: "04:30 PM",
-      title: "Hassan Hakoum, Gnawa",
-      location: "Market Place",
-      images: [HasanHakmoun],
-    },
-    {
-      date: "2024-11-22",
-      startTime: "04:30 PM",
-      endTime: "05:30 PM",
-      title: "Illumination & Calligraphy Workshop with Mohamed Mkhaiyar",
-      location: "Workshop Tent",
-      images: [Illumination],
-    },
-
-    // Day 2: 2024-11-23
     {
       date: "2024-11-23",
-      startTime: "05:30 PM",
-      endTime: "06:00 PM",
+      startTime: "12:30 PM",
+      endTime: "01:00 PM",
+      title: "Anas Handpan Orchestra Workshop",
+      location: "DOME",
+      images: [AnasHandPan],
+    },
+    {
+      date: "2024-11-23",
+      startTime: "01:00 PM",
+      endTime: "02:00 PM",
+      title: "Poetry by Farima Berenji",
+      location: "MARKET PLACE",
+      images: [Farima],
+    },
+    {
+      date: "2024-11-23",  
+      startTime: "02:00 PM",
+      endTime: "02:30 PM",
+      title: "Illumination & Geometry Workshop",
+      location: "DOME",
+      images: [Illumination],
+    },
+    
+    {
+      date: "2024-11-23",
+      startTime: "02:00 PM",
+      endTime: "03:00 PM",
+      title: "Hassan Hakmoun (Gnawa)",
+      location: "TREE OF LIFE",
+      images: [HasanHakmoun],
+    },
+    // {
+    //   date: "2024-11-23",
+    //   startTime: "03:00 PM",
+    //   endTime: "04:00 PM",
+    //   title: "Sema Whirling Workshop with Farima Berenji",
+    //   location: "DOME",
+    //   images: [Seemawirling],
+    // },
+    {
+      date: "2024-11-23",
+      startTime: "03:00 PM",
+      endTime: "03:30 PM",
       title: "Sandu",
       location: "Market Place",
       images: [SanduImage],
     },
     {
       date: "2024-11-23",
-      startTime: "06:00 PM",
-      endTime: "07:00 PM",
-      title: "Shiny Camara & Art Performers: Many Colors of the UAE",
+      startTime: "03:30 PM",
+      endTime: "04:00 PM",
+      title: "Heritage Band - Al Aahaal",
+      location: "TREE OF LIFE",
+      images: [Heritage],
+    },
+
+    // {
+    //   date: "2024-11-23",
+    //   startTime: "04:00 PM",
+    //   endTime: "04:30 PM",
+    //   title: "Senny Camara & Art performer Mary Malifarges",
+    //   location: "TREE OF LIFE",
+    //   images: [SennyCamara, maryMalifarges],
+    // },
+    {
+      date: "2024-11-23",
+      startTime: "04:00 PM",
+      endTime: "05:30 PM",
+      title: "Heritage Band - Noban",
       location: "Market Place",
       images: [SennyCamara],
     },
+
     {
       date: "2024-11-23",
-      startTime: "07:00 PM",
-      endTime: "07:30 PM",
-      title: "Babaka Blue & Shabbi Band",
-      location: "Stage 1",
+      startTime: "05:30 PM",
+      endTime: "06:30 PM",
+      title: "Baraka Blue & Shadi’s Band",
+      location: "TREE OF LIFE",
       images: [BarakaBand],
     },
     {
       date: "2024-11-23",
-      startTime: "07:30 PM",
-      endTime: "08:00 PM",
-      title: "Semma Workshop with Fatma",
+      startTime: "05:30 PM",
+      endTime: "06:30 PM",
+      title: "Calligraphy lighting Workshop with Julien Breton",
       location: "DOME",
-      images: [Seemawirling],
+      images: [JulienBreton],
+    },
+    {
+      date: "2024-11-23",
+      startTime: "07:00 PM",
+      endTime: "08:00 PM",
+      title: "Constantinople & Ghalia Benali",
+      location: "MAIN STAGE",
+      images: [Constantinople],
     },
     {
       date: "2024-11-23",
       startTime: "08:00 PM",
       endTime: "09:00 PM",
-      title: "Athan followed by Heritage Band Tour",
-      location: "Heritage Village",
-      images: [Heritage],
+      title: "Art Tour",
+      location: "(A.3)",
     },
     {
-      date: "2024-11-23",
+        date: "2024-11-23",
       startTime: "09:30 PM",
-      endTime: "10:30 PM",
-      title: "Calligraphy Workshop with Julien Breton",
-      location: "Workshop Tent",
-      images: [CalligaraphyImage],
+      endTime: "11:00 PM",
+      title: "Journey of Light Featuring Kamal Musallam Lisa Gerrard ",
+      location: "MAIN STAGE",
+      images: [JorneyImage],
     },
     {
-      date: "2024-11-23",
-      startTime: "10:30 PM",
-      endTime: "11:30 PM",
-      title: "Athan followed by Heritage Band Tour",
-      location: "Heritage Village",
+        date: "2024-11-23",
+      startTime: "11:00 PM",
+      endTime: "12:00 AM",
+      title: "Abi Sampa & Rushil Orchestral Qawwali",
+      location: "MAIN STAGE",
+      images: [RushilQawali],
+    },
+    // Day 3 
+    {
+      date: "2024-11-24",
+      startTime: "09:00 AM",
+      endTime: "10:30 AM",
+      title: "Sound immersion with Zarine",
+      location: "DOME",
+      images: [Soundimmersion],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "11:00 AM",
+      endTime: "12:00 PM",
+      title: "Dervish Whirling Workshop",
+      location: "DOME",
+      images: [Seemawirling],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "12:00 PM",
+      endTime: "01:00 PM",
+      title: "Art Tour",
+      location: "(A.3)",
+    },
+    {
+      date: "2024-11-24",
+      startTime: "01:00 PM",
+      endTime: "02:00 PM",
+      title: "Illumination & Geometry Workshop",
+      location: "DOME",
+      images: [Illumination],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "02:00 PM",
+      endTime: "02:30 PM",
+      title: "Baraka Blue & Shadi’s Band",
+      location: "TREE OF LIFE",
+      images: [BarakaBand],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "02:30 PM",
+      endTime: "03:00 PM",
+      title: "Sandu",
+      location: "MARKET PLACE",
+      images: [SanduImage],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "03:00 PM",
+      endTime: "04:00 PM",
+      title: "Poetry by Nujoom Al-Ghanem",
+      location: "TREE OF LIFE",
+      images: [PoetryByNujoom],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "04:00 PM",
+      endTime: "04:30 PM",
+      title: "Heritage Band Al Weliyah",
+      location: "TREE OF LIFE",
       images: [Heritage],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "04:00 PM",
+      endTime: "05:00 PM",
+      title: "Calligraphy Workshop",
+      location: "DOME",
+      images: [Illumination],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "04:30 PM",
+      endTime: "05:30 PM",
+      title: "Hassan Hakmoun (Gnawa)",
+      location: "TREE OF LIFE",
+      images: [HasanHakmoun],
+    },
+    // {
+    //   date: "2024-11-24",
+    //   startTime: "05:30 PM",
+    //   endTime: "06:00 PM",
+    //   title: "Athan Followed by Heritage Band - Al Liwah",
+    //   location: "MARKET PLACE",
+    //   images: [Heritage],
+    // },
+    {
+      date: "2024-11-24",
+      startTime: "05:30 PM",
+      endTime: "06:30 PM",
+      title: "Calligraphy lighting Workshop with Julien Breton",
+      location: "DOME",
+      images: [JulienBreton],
+    },
+    
+    {
+      date: "2024-11-24",
+      startTime: "06:00 PM",
+      endTime: "07:00 PM",
+      title: "Fadi Rifaai & Sandu",
+      location: "TREE OF LIFE",
+      images: [SanduImage, FadiRifaai],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "07:00 PM",
+      endTime: "07:30 PM",
+      title: "Followed by Heritage Band - Al Malad",
+      location: "MAIN STAGE",
+      images: [Heritage],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "07:30 PM",
+      endTime: "08:30 PM",
+      title: "Ensemble Khourchid & The Whirling Dervishes of Damas",
+      location: "MAIN STAGE",
+      images: [Ensemble],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "09:00 PM",
+      endTime: "10:00 PM",
+      title: "Closing Bodour Al Qasimi ",
+      location: "MAIN STAGE",
+      images: [Bodour],
+    },
+    {
+      date: "2024-11-24",
+      startTime: "9:00 PM",
+      endTime: "10:30 PM",
+      title: "Dhafer Youssef",
+      location: "MAIN STAGE",
+      images: [DhaferYoussef],
     },
 
-    // Day 3: 2024-11-24
-    {
-      date: "2024-11-24",
-      startTime: "10:00 PM",
-      endTime: "11:00 PM",
-      title: "Contemporary Heritage Band Tour",
-      location: "Tour of UAE",
-      images: [Breathwork],
-    },
-    {
-      date: "2024-11-24",
-      startTime: "11:00 PM",
-      endTime: "11:30 PM",
-      title: "Art Tour",
-      location: "DOME",
-    },
-    {
-      date: "2024-11-24",
-      startTime: "11:30 PM",
-      endTime: "12:30 AM",
-      title: "Journey of Light",
-      location: "Market Place",
-      images: [JorneyImage],
-    }
   ];
 
   const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 80 / 30 : 120 / 30);
@@ -245,6 +439,12 @@ function ProgramSection() {
 
   const calculateImageSize = (startTime, endTime) => {
     const duration = calculateDuration(startTime, endTime); // Calculate duration in minutes
+  
+    if (window.innerWidth <= 768) {
+      return 40; 
+    }
+  
+    // Use dynamic size for larger screens
     const imageSize = duration >= 60 ? 160 : (duration / 60) * 160; // Proportional size for events < 1 hour
     return imageSize;
   };
@@ -308,7 +508,7 @@ function ProgramSection() {
             {renderEventContent(event, imageSize)}
           </div>
           {event.images &&
-            event.startTime === filteredEvents[index + 1]?.startTime &&
+            event.startTime === filteredEvents[index + 1]?.startTime && window.innerWidth >= 768 &&
             renderEventContent(filteredEvents[index + 1], imageSize)}
           {displayEndTime && <div className="time-label2">{event.endTime}</div>}
         </div>
