@@ -1,8 +1,6 @@
 import React, { useState , useEffect } from 'react';
 import "../App.css";
-
 import {ReactComponent as ProgramImage} from '../assets/Program.svg';
-import maryMalifarges from "../assets/Mary Malifarges.png";
 import SennyCamara from "../assets/SennyCamara.png";
 import HandPanwithAnas from "../assets/handPan.png";
 import AnasHandPan from "../assets/ANSHandpan.png";
