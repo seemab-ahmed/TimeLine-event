@@ -326,7 +326,7 @@ function ProgramSection() {
   ];
   
 
-  const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 150 / 30 : 120 / 30);
+  const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
 
   useEffect(() => {
     const handleResize = () => {
@@ -653,7 +653,13 @@ function ProgramSection() {
   };
   const days = [...new Set(eventsData.map((event) => event.date))];
   const [activeTab, setActiveTab] = useState(0);
-  const dates = days.map((day) => new Date(day).toDateString());
+  
+  // Ensure that days are in the correct format before converting them
+  // const dates = days.map((day) => new Date(Date.parse(day)).toDateString());
+  const dates = days.map((day) => new Date(day + 'T00:00:00').toDateString());
+  
+  console.log({ dates, activeTab, days });
+  
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
