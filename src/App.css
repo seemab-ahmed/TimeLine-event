@@ -435,9 +435,10 @@ h1 {
     font-size: 7px;
     display: block;
   }
-   .timeline-entry.left {
-   padding: 10px;
-  }
+      .timeline-entry.left {
+        padding: 20px 70px 20px 5px;
+    }
+
   .timeline-entry.right {
     padding: 10px;
    }
