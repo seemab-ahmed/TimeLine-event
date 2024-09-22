@@ -547,7 +547,7 @@ function ProgramSection() {
   const renderEventDataElements = [];
   for (let index = 0; index < sortedEvents.length; index++) {
     const event = sortedEvents[index];
-    const eventHeight = getEventHeight(event.startTime, event.endTime);
+    const eventHeight = getEventHeight(event.startTime, event.endTime) >= 400 ? 400 : getEventHeight(event.startTime, event.endTime);
     const imageSize = calculateImageSize(event.startTime, event.endTime);
 
     let topOffset = 0;
