@@ -326,7 +326,7 @@ function ProgramSection() {
   ];
   
 
-  const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 140 / 30 : 120 / 30);
+  const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 150 / 30 : 120 / 30);
 
   useEffect(() => {
     const handleResize = () => {
