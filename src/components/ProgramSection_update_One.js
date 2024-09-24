@@ -9,7 +9,7 @@ import AnasHandPan from "../assets/ANSHandpan.png";
 import PoetryByNujoom from "../assets/PoetryByBujoom.png";
 import HasanHakmoun from "../assets/Hassanhakmoun.png";
 import Illumination from "../assets/Illumination.png";
-// import SanduImage from "../assets/Sandu.png";
+import SanduImage from "../assets/Sandu.png";
 import Seemawirling from "../assets/Sema Whirling.png";
 import BarakaBand from "../assets/BarakaBlue&ShadiBand.png";
 import Heritage from "../assets/Heritage band tour.png";
@@ -24,6 +24,7 @@ import RushilQawali from "../assets/AbiSampaRushilOrchestralQawwali.png";
 import Soundimmersion from "../assets/Layer 2.png";
 import FadiRifaai from "../assets/Fadi Rifaai.png";
 import Ensemble from "../assets/Ensemble Khourchid_.png";
+import DhaferYousef from "../assets/Dhafer Youssef.png"
 
 function ProgramSection() {
  
@@ -36,6 +37,7 @@ function ProgramSection() {
       title: "Emirati Heritage band – Al Nadba",
       location: "Main Stage",
       images: [Heritage],
+      position: "left", // Default position
     },
     {
       date: "2024-11-22",
@@ -44,14 +46,16 @@ function ProgramSection() {
       title: "Bodour Al Qasimi opening speech and poetry with Senny Camara",
       location: "Main Stage",
       images: [SennyCamara, Bodour],
+      position: "right", // Alternating position to avoid overlap
     },
     {
       date: "2024-11-22",
-      startTime: "07:00 PM",
+      startTime: "07:30 PM",
       endTime: "08:30 PM",
       title: "Rumi’s Ziyad Sahab & Alifmotion Light Calligraphy by Julien Bruton",
       location: "Main Stage",
       images: [Ziyad, JulienBreton],
+      position: "left",
     },
     {
       date: "2024-11-22",
@@ -59,6 +63,7 @@ function ProgramSection() {
       endTime: "09:30 PM",
       title: "Art tour",
       location: "(A.3)",
+      position: "right",
     },
     {
       date: "2024-11-22",
@@ -67,6 +72,7 @@ function ProgramSection() {
       title: "Sami Yusuf",
       location: "Main Stage",
       images: [SamiYusuf],
+      position: "left",
     },
     {
       date: "2024-11-22",
@@ -75,8 +81,9 @@ function ProgramSection() {
       title: "Anas Handpan Orchestra",
       location: "Tree of Life",
       images: [AnasHandPan],
+      position: "right",
     },
-    
+  
     // Day 2 (2024-11-23)
     {
       date: "2024-11-23",
@@ -84,6 +91,7 @@ function ProgramSection() {
       endTime: "11:00 AM",
       title: "Breathwork with Walid Aboulnaga",
       location: "Dome",
+      position: "right",
     },
     {
       date: "2024-11-23",
@@ -92,6 +100,7 @@ function ProgramSection() {
       title: "Handpan with Anas",
       location: "Market Place",
       images: [HandPanwithAnas],
+      position: "left",
     },
     {
       date: "2024-11-23",
@@ -100,6 +109,7 @@ function ProgramSection() {
       title: "Anas Handpan Orchestra workshop",
       location: "Dome",
       images: [AnasHandPan],
+      position: "right",
     },
     {
       date: "2024-11-23",
@@ -107,22 +117,25 @@ function ProgramSection() {
       endTime: "01:00 PM",
       title: "Art tour",
       location: "(A.3)",
+      position: "left",
     },
     {
       date: "2024-11-23",
       startTime: "01:00 PM",
-      endTime: "01:30 PM",
+      endTime: "02:30 PM",
       title: "Illumination & Geometry workshop",
       location: "Dome",
       images: [Illumination],
+      position: "left",
     },
     {
       date: "2024-11-23",
-      startTime: "01:30 PM",
+      startTime: "01:00 PM",
       endTime: "02:00 PM",
       title: "Poetry by Farima Berenji",
       location: "Market Place",
       images: [Farima],
+      position: "right",
     },
     {
       date: "2024-11-23",
@@ -131,6 +144,7 @@ function ProgramSection() {
       title: "Hassan Hakmoun (Gnawa)",
       location: "Tree of Life",
       images: [HasanHakmoun],
+      position: "right",
     },
     {
       date: "2024-11-23",
@@ -138,24 +152,26 @@ function ProgramSection() {
       endTime: "04:00 PM",
       title: "Sufi Whirling workshop with Farima Berenji",
       location: "Dome",
-      images: [Seemawirling],
+      position: "right",
     },
-    // {
-    //   date: "2024-11-23",
-    //   startTime: "03:00 PM",
-    //   endTime: "03:30 PM",
-    //   title: "Sandu",
-    //   location: "Market Place",
-    //   images: [SanduImage],
-    // },
-    // {
-    //   date: "2024-11-23",
-    //   startTime: "03:30 PM",
-    //   endTime: "04:00 PM",
-    //   title: "Emirati Heritage band – Al Aahaal",
-    //   location: "Tree of Life",
-    //   images: [Heritage],
-    // },
+    {
+      date: "2024-11-23",
+      startTime: "03:00 PM",
+      endTime: "03:30 PM",
+      title: "Sandu",
+      location: "Market Place",
+      images: [SanduImage],
+      position: "left",
+    },
+    {
+      date: "2024-11-23",
+      startTime: "03:30 PM",
+      endTime: "04:00 PM",
+      title: "Emirati Heritage band – Al Aahaal",
+      location: "Tree of Life",
+      images: [Heritage],
+      position: "left",
+    },
     {
       date: "2024-11-23",
       startTime: "04:00 PM",
@@ -163,22 +179,25 @@ function ProgramSection() {
       title: "Senny Camara & Art performer Mary Malifarges",
       location: "Tree of Life",
       images: [SennyCamara, maryMalifarges],
+      position: "left",
     },
     {
       date: "2024-11-23",
-      startTime: "05:00 PM",
+      startTime: "05:15 PM",
       endTime: "05:30 PM",
       title: "Emirati Heritage Band – Noban",
       location: "Market Place",
+      position: "right",
     },
-    // {
-    //   date: "2024-11-23",
-    //   startTime: "05:30 PM",
-    //   endTime: "06:30 PM",
-    //   title: "Baraka Blue and Shadi’s band",
-    //   location: "Tree of Life",
-    //   images: [BarakaBand],
-    // },
+    {
+      date: "2024-11-23",
+      startTime: "05:30 PM",
+      endTime: "06:30 PM",
+      title: "Baraka Blue and Shadi’s band",
+      location: "Tree of Life",
+      images: [BarakaBand],
+      position: "right",
+    },
     {
       date: "2024-11-23",
       startTime: "05:30 PM",
@@ -186,6 +205,7 @@ function ProgramSection() {
       title: "Light Calligraphy workshop with Julien Breton",
       location: "Dome",
       images: [JulienBreton],
+      position: "right",
     },
     {
       date: "2024-11-23",
@@ -194,6 +214,7 @@ function ProgramSection() {
       title: "Constantinople & Ghalia Benali",
       location: "Main Stage",
       images: [Constantinople],
+      position: "left",
     },
     {
       date: "2024-11-23",
@@ -201,6 +222,7 @@ function ProgramSection() {
       endTime: "08:45 PM",
       title: "Art tour",
       location: "(A.3)",
+      position: "right",
     },
     {
       date: "2024-11-23",
@@ -209,6 +231,7 @@ function ProgramSection() {
       title: "Journeys of Light featuring Kamal Musallam, Lisa Gerard, Loire Cotler and Rasha Rizk",
       location: "Main Stage",
       images: [JorneyImage],
+      position: "left",
     },
     {
       date: "2024-11-23",
@@ -217,8 +240,9 @@ function ProgramSection() {
       title: "Abi Sampa & Rushil Ranjan Orchestral Qawwali",
       location: "Main Stage",
       images: [RushilQawali],
+      position: "right",
     },
-    
+  
     // Day 3 (2024-11-24)
     {
       date: "2024-11-24",
@@ -227,6 +251,7 @@ function ProgramSection() {
       title: "Sound immersion with Zarine",
       location: "Dome",
       images: [Soundimmersion],
+      position: "right",
     },
     {
       date: "2024-11-24",
@@ -235,6 +260,7 @@ function ProgramSection() {
       title: "Dervish Whirling workshop",
       location: "Dome",
       images: [Seemawirling],
+      position: "left",
     },
     {
       date: "2024-11-24",
@@ -242,32 +268,35 @@ function ProgramSection() {
       endTime: "12:45 PM",
       title: "Art tour",
       location: "(A.3)",
+      position: "right",
     },
     {
       date: "2024-11-24",
       startTime: "01:00 PM",
-      endTime: "02:00 PM",
-      title: "Baraka Blue & Shadi’s Band",
-      location: "Tree of Life",
-      images: [BarakaBand],
-    },
-    {
-      date: "2024-11-24",
-      startTime: "02:00 PM",
       endTime: "03:00 PM",
       title: "Illumination & Geometry workshop",
       location: "Dome",
       images: [Illumination],
+      position: "right",
     },
-    
-    // {
-    //   date: "2024-11-24",
-    //   startTime: "02:30 PM",
-    //   endTime: "03:00 PM",
-    //   title: "Sandu",
-    //   location: "Market Place",
-    //   images: [SanduImage],
-    // },
+    {
+      date: "2024-11-24",
+      startTime: "01:30 PM",
+      endTime: "02:30 PM",
+      title: "Baraka Blue and Shadi’s band",
+      location: "Tree of Life",
+      images: [BarakaBand],
+      position: "left",
+    },
+    {
+      date: "2024-11-24",
+      startTime: "02:30 PM",
+      endTime: "03:00 PM",
+      title: "Sandu",
+      location: "Market Place",
+      images: [SanduImage],
+      position: "left",
+    },
     {
       date: "2024-11-24",
       startTime: "03:00 PM",
@@ -275,59 +304,104 @@ function ProgramSection() {
       title: "Poetry by Nujoom Al-Ghanem",
       location: "Tree of Life",
       images: [PoetryByNujoom],
-    },
-    {
+      position: "left",
+  },
+  {
       date: "2024-11-24",
       startTime: "04:00 PM",
       endTime: "04:30 PM",
-      title: "Emirati Heritage band – Al Aahaal",
-      location: "Main Stage",
+      title: "Emirati Heritage band – Al Weliyah",
+      location: "Tree of Life",
       images: [Heritage],
-    },
-    {
+      position: "right",
+  },
+  {
       date: "2024-11-24",
-      startTime: "04:45 PM",
+      startTime: "04:00 PM",
+      endTime: "05:00 PM",
+      title: "Calligraphy workshop",
+      location: "Dome",
+      position: "left",
+  },
+  {
+      date: "2024-11-24",
+      startTime: "04:30 PM",
       endTime: "05:30 PM",
-      title: "Rasha Rizk & Orpheus Ensemble",
-      location: "Main Stage",
-      images: [Ensemble],
-    },
-    {
+      title: "Hassan Hakmoun (Gnawa)",
+      location: "Tree of Life",
+      images: [HasanHakmoun],
+      position: "right",
+  },
+  {
       date: "2024-11-24",
-      startTime: "05:45 PM",
-      endTime: "06:45 PM",
-      title: "Art performance by Mary Malifarges",
-      location: "Main Stage",
-      images: [maryMalifarges],
-    },
-    {
+      startTime: "05:30 PM",
+      endTime: "06:00 PM",
+      title: "Emirati Heritage band – Al Liwah",
+      location: "Market Place",
+      images: [Heritage],
+      position: "left",
+  },
+  {
+      date: "2024-11-24",
+      startTime: "05:30 PM",
+      endTime: "06:30 PM",
+      title: "Light Calligraphy workshop with Julien Breton",
+      location: "Dome",
+      images: [JulienBreton],
+      position: "right",
+  },
+  {
+      date: "2024-11-24",
+      startTime: "06:00 PM",
+      endTime: "07:00 PM",
+      title: "Fadi Rifaai, Zahi and Sandu",
+      location: "Tree of Life",
+      images: [FadiRifaai],
+      position: "left",
+  },
+  {
       date: "2024-11-24",
       startTime: "07:00 PM",
-      endTime: "08:00 PM",
-      title: "Waed Bouhassoun & musicians",
+      endTime: "07:30 PM",
+      title: "Emirati Heritage band – Al Malad",
       location: "Main Stage",
-      images: [FadiRifaai],
-    },
-    {
+      images: [Heritage],
+      position: "right",
+  },
+  {
       date: "2024-11-24",
-      startTime: "08:00 PM",
-      endTime: "09:00 PM",
-      title: "Art tour",
-      location: "(A.3)",
-    },
-    {
-      date: "2024-11-24",
-      startTime: "09:00 PM",
-      endTime: "10:00 PM",
-      title: "Ziya Tabassian, Constantinople & Guests",
+      startTime: "07:30 PM",
+      endTime: "08:30 PM",
+      title: "Ensemble Khourchid & The Whirling Dervishes of Damascus",
       location: "Main Stage",
-      images: [Constantinople],
-    },
+      images: [Ensemble],
+      position: "left",
+  },
+  {
+      date: "2024-11-24",
+      startTime: "09:30 PM",
+      endTime: "09:45 PM",
+      title: "Bodour Al Qasimi",
+      location: "Main Stage",
+      images: [Bodour],
+      position: "right",
+  },
+  {
+      date: "2024-11-24",
+      startTime: "10:00 PM",
+      endTime: "11:30 PM",
+      title: "Dhafer Youssef",
+      location: "Main Stage",
+      images: [DhaferYousef],
+      position: "left",
+  }
+    
   ];
+
   
 
   const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
-
+  let marginOffset = 0
   useEffect(() => {
     const handleResize = () => {
       setHeightPerMinute(window.innerWidth <= 768 ? 80 / 30 : 120 / 30);
@@ -340,6 +414,44 @@ function ProgramSection() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const timeToMinutes = (time) => {
+    const [hour, minutePart] = time.split(':');
+    const minutes = parseInt(minutePart.substr(0, 2), 10);
+    const isPM = minutePart.includes('PM');
+    let hours = parseInt(hour, 10);
+    if (isPM && hours !== 12) hours += 12;
+    if (!isPM && hours === 12) hours = 0; // Midnight correction for 12:00 AM
+    return hours * 60 + minutes;
+  };
+
+
+  const groupEventsByTime = (events) => {
+    const groupedEvents = [];
+    events.forEach(event => {
+      const eventStart = timeToMinutes(event.startTime);
+      const eventEnd = timeToMinutes(event.endTime);
+      
+      // Check if this event overlaps with any existing group
+      let foundGroup = false;
+      for (const group of groupedEvents) {
+        const groupStart = timeToMinutes(group[0].startTime);
+        const groupEnd = timeToMinutes(group[group.length - 1].endTime);
+        
+        if ((eventStart >= groupStart && eventStart < groupEnd) || (eventEnd > groupStart && eventEnd <= groupEnd)) {
+          group.push(event); // Add to the existing group
+          foundGroup = true;
+          break;
+        }
+      }
+  
+      if (!foundGroup) {
+        groupedEvents.push([event]); // Start a new group if no overlap found
+      }
+    });
+    
+    return groupedEvents;
+  };
   // Helper function to check if two events overlap
   const doEventsOverlap = (event1, event2) => {
     const convertTo24Hour = (time) => {
@@ -367,32 +479,6 @@ function ProgramSection() {
     return event1End > event2Start && event2End > event1Start;
   };
 
-  // const doEventsOverlap = (event1, event2) => {
-  //   const convertTo24Hour = (time) => {
-  //     const [hour, minute, period] = time.split(/[:\s]/);
-  //     let hours = parseInt(hour);
-  //     if (period === "PM" && hours !== 12) {
-  //       hours += 12;
-  //     } else if (period === "AM" && hours === 12) {
-  //       hours = 0;
-  //     }
-  //     return { hours, minutes: parseInt(minute) };
-  //   };
-  
-  //   const start1 = convertTo24Hour(event1.startTime);
-  //   const end1 = convertTo24Hour(event1.endTime);
-  //   const start2 = convertTo24Hour(event2.startTime);
-  //   const end2 = convertTo24Hour(event2.endTime);
-  
-  //   const event1Start = start1.hours * 60 + start1.minutes;
-  //   const event1End = end1.hours * 60 + end1.minutes;
-  //   const event2Start = start2.hours * 60 + start2.minutes;
-  //   const event2End = end2.hours * 60 + start2.minutes;
-  
-  //   // Check for overlap
-  //   return event1End > event2Start && event2End > event1Start;
-  // };
-  // Helper function to calculate duration in minutes
   const calculateDuration = (start, end) => {
     const convertTo24Hour = (time) => {
       const [hour, minute, period] = time.split(/[:\s]/);
@@ -431,99 +517,11 @@ function ProgramSection() {
     return imageSize;
   };
 
-  // const renderEventData = (day) => {
-
-  //   const filteredEvents = eventsData.filter((event) => event.date === day);
-  //   const sortedEvents = filteredEvents.sort((a, b) => {
-  //     const timeToMinutes = (time) => {
-  //       const [hour, minute, period] = time.split(/[:\s]/);
-  //       let hours = parseInt(hour);
-  //       if (period === "PM" && hours !== 12) {
-  //         hours += 12;
-  //       } else if (period === "AM" && hours === 12) {
-  //         hours = 0;
-  //       }
-  //       return hours * 60 + parseInt(minute);
-  //     };
-  
-  //     return timeToMinutes(a.startTime) - timeToMinutes(b.startTime);
-  //   });
-    
-  //   const renderEventDataElements = [];
-  //   for (let index = 0; index < sortedEvents.length; index++) {
-  //     let event = sortedEvents[index];
-  //     const eventHeight = getEventHeight(event.startTime, event.endTime);
-  //     const imageSize = calculateImageSize(event.startTime, event.endTime);
-
-  //     let topOffset = 0;
-  //     const previousEvent = index > 0 ? sortedEvents[index - 1] : null;
-  //     const previousEventHeight =
-  //       index > 0
-  //         ? getEventHeight(previousEvent.startTime, previousEvent.endTime)
-  //         : 0;
-
-  //     if (previousEvent && doEventsOverlap(previousEvent, event)) {
-  //       topOffset = -previousEventHeight - 26;
-  //     }
-
-  //     const displayStartTime =
-  //       !previousEvent || previousEvent.startTime !== event.startTime;
-  //     const displayEndTime =
-  //       !previousEvent || previousEvent.endTime !== event.endTime;
-  //     const isContiguous =
-  //       previousEvent && previousEvent.endTime === event.startTime;
-
-  //     let gap = 0;
-  //     if (previousEvent) {
-  //       const gapDuration = calculateDuration(
-  //         previousEvent.endTime,
-  //         event.startTime
-  //       );
-  //       const gapHeight = (gapDuration / 30) * 120;
-  //       gap = gapHeight > 0 ? gapHeight : 0;
-
-  //       if (previousEvent && doEventsOverlap(previousEvent, event)) {
-  //         gap = 0;
-  //       }
-  //     }
-
-  //     topOffset = gap;
-
-  //     const renderElement = (
-  //       <div
-  //         key={index}
-  //         className={`timeline-entry ${index % 2 === 0 ? "right" : "left"}`}
-  //         style={{
-  //           height: `${eventHeight}px`,
-  //           position: "relative",
-  //           top: `${topOffset}px`,
-  //         }}
-  //       >
-  //         {displayStartTime && !isContiguous && (
-  //           <div className="time-label">{event.startTime}</div>
-  //         )}
-  //         <div className="event-info">
-  //           {renderEventContent(event, imageSize)}
-  //         </div>
-  //         {event.images &&
-  //           event.startTime === filteredEvents[index + 1]?.startTime && window.innerWidth >= 768 &&
-  //           renderEventContent(filteredEvents[index + 1], imageSize)}
-  //         {displayEndTime && <div className="time-label2">{event.endTime}</div>}
-  //       </div>
-  //     );
-
-  //     renderEventDataElements.push(renderElement);
-  //     if (
-  //       event.images &&
-  //       event.startTime === filteredEvents[index + 1]?.startTime
-  //     ) {
-  //       index++;
-  //     }
-  //   }
-  //   return renderEventDataElements;
-  // };
 
   const renderEventData = (day) => {
+    let currentOlap = 0;
+    let prevOlap = 0
+
   // Filter events for the given day
   const filteredEvents = eventsData.filter((event) => event.date === day);
 
@@ -543,7 +541,9 @@ function ProgramSection() {
     return timeToMinutes(a.startTime) - timeToMinutes(b.startTime);
   });
 
+  console.log(groupEventsByTime(sortedEvents));
   // Render the sorted events with calculated gaps between them
+   marginOffset = 0
   const renderEventDataElements = [];
   for (let index = 0; index < sortedEvents.length; index++) {
     const event = sortedEvents[index];
@@ -557,9 +557,7 @@ function ProgramSection() {
           ? getEventHeight(previousEvent.startTime, previousEvent.endTime)
           : 0;
 
-    if (previousEvent && doEventsOverlap(previousEvent, event)) {
-      topOffset = -previousEventHeight - 26;
-    }
+    
 
     let gap = 0;
 
@@ -567,7 +565,7 @@ function ProgramSection() {
       // Calculate the gap between the previous event's end time and the current event's start time
       const gapDuration = calculateDuration(previousEvent.endTime, event.startTime);
       const gapHeight = gapDuration * heightPerMinute; // Gap height based on time difference and heightPerMinute
-
+      
       gap = gapHeight > 0 ? gapHeight : 0;
 
       if (gap > 0) {
@@ -584,6 +582,22 @@ function ProgramSection() {
       }
     }
 
+    if (previousEvent && doEventsOverlap(previousEvent, event)) {
+      if(currentOlap>prevOlap){
+        topOffset = marginOffset - previousEventHeight -26
+      }else{
+        topOffset =   marginOffset - previousEventHeight + 26;
+      }
+      
+    prevOlap = currentOlap
+    currentOlap++
+      
+      marginOffset =  topOffset ;
+    }else{
+      topOffset =  marginOffset;
+
+    }
+
     // Determine whether to display the start time based on overlap with the previous event
     const shouldDisplayStartTime =
       !previousEvent || previousEvent.startTime !== event.startTime;
@@ -591,7 +605,8 @@ function ProgramSection() {
     const renderElement = (
       <div
         key={index}
-        className={`timeline-entry ${index % 2 === 0 ? "right" : "left"}`}
+        // ${index % 2 === 0 ? "right" : "left"}
+        className={`timeline-entry ${event?.position} event-${index}`}
         style={{
           height: `${eventHeight}px`,
           position: "relative",
@@ -603,14 +618,16 @@ function ProgramSection() {
         <div className="event-info">
           {renderEventContent(event, imageSize)}
           {event.images &&
-            event.startTime === filteredEvents[index + 1]?.startTime && window.innerWidth >= 768 &&
+            event.startTime === filteredEvents[index + 1]?.startTime && event.endTime === filteredEvents[index + 1]?.endTime && window.innerWidth >= 768 &&
             renderEventContent(filteredEvents[index + 1], imageSize)}
         </div>
 
        {shouldDisplayStartTime && <div className="time-label2">{event.endTime}</div>}
       </div>
     );
-
+   if(event.startTime === filteredEvents[index + 1]?.startTime && event.endTime === filteredEvents[index + 1]?.endTime && window.innerWidth >= 768){
+    index++;
+   } 
     renderEventDataElements.push(renderElement);
   }
   return renderEventDataElements;
@@ -686,7 +703,9 @@ function ProgramSection() {
         <h2 className="full-date">{dates[activeTab]}</h2>
         <div className="tab-content">
           <div id={`day${activeTab}`}>
-            <div className="timeline">{renderEventData(days[activeTab])}</div>
+            <div className="timeline">{renderEventData(days[activeTab])}
+            <div className="timeline-line" style={{height: `calc(100% + ${marginOffset}px)`}}></div>
+            </div>
           </div>
         </div>
       </div>
