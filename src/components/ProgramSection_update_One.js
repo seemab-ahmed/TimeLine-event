@@ -5,26 +5,32 @@ import SennyCamara from "../assets/SennyCamara.png";
 import maryMalifarges from "../assets/Mary Malifarges.png";
 import HandPanwithAnas from "../assets/handPan.png";
 import AnasHandPan from "../assets/ANSHandpan.png";
-// import CalligaraphyImage from "../assets/CalliGraphy.png";
+import CalligaraphyImage from "../assets/CalliGraphy.png";
 import PoetryByNujoom from "../assets/PoetryByBujoom.png";
 import HasanHakmoun from "../assets/Hassanhakmoun.png";
 import Illumination from "../assets/Illumination.png";
 import SanduImage from "../assets/Sandu.png";
 import Seemawirling from "../assets/Sema Whirling.png";
 import BarakaBand from "../assets/BarakaBlue&ShadiBand.png";
-import Heritage from "../assets/Heritage band tour.png";
+import HeritagebandNadba from "../assets/Heritage band - Al Nadba-Fri Nov 22 at 615 Main Stage.png";
+import HeritageBandAahaal from "../assets/Heritage band - Al Aahaal-Sat Nov 23 at 330 pm Tree of Life.png";
+import HeritageBandNoban from "../assets/Heritage band - Noban-Sat Nov 23 at 515 pm Marketplace.png";
+import HeritageBandWeliyah from "../assets/Heritage band - Al Wailyyah-Sun Nov 24 at 400 pm Tree of Life.png";
+import HeritageBandLiwah from "../assets/Heritage band - Al Liwah-Sun Nov 24 at 530 pm Marketplace.png";
+import HeritageBandMalad from "../assets/Heritage band - Al Malad-Sun Nov 24 at 700 pm Main Stage.png";
 import JorneyImage from "../assets/Journey of Light.png";
 import Bodour from "../assets/Bodour Al Qasimi_.png";
 import Ziyad from "../assets/Rumi’s Ziyad Sahab.png";
 import JulienBreton from "../assets/Calligraphy lighting Workshop with Julien Breton.png";
 import SamiYusuf from "../assets/Sami Yusuf (1).png";
 import Constantinople from "../assets/Constantinople & Ghalia Benali.png"
-import Farima from "../assets/Farima Berenji.png";
+import Farima from "../assets/Farima Berenji (1).png";
 import RushilQawali from "../assets/AbiSampaRushilOrchestralQawwali.png";
 import Soundimmersion from "../assets/Layer 2.png";
 import FadiRifaai from "../assets/Fadi Rifaai.png";
 import Ensemble from "../assets/Ensemble Khourchid_.png";
-import DhaferYousef from "../assets/Dhafer Youssef.png"
+import DhaferYousef from "../assets/Dhafer Youssef.png";
+import WalidAboulnaga from "../assets/Walid Aboulnaga.png";
 
 function ProgramSection() {
  
@@ -36,7 +42,7 @@ function ProgramSection() {
       endTime: "06:30 PM",
       title: "Emirati Heritage band – Al Nadba",
       location: "Main Stage",
-      images: [Heritage],
+      images: [HeritagebandNadba],
       position: "left", // Default position
     },
     {
@@ -91,6 +97,7 @@ function ProgramSection() {
       endTime: "11:00 AM",
       title: "Breathwork with Walid Aboulnaga",
       location: "Dome",
+      images: [WalidAboulnaga],
       position: "right",
     },
     {
@@ -152,6 +159,7 @@ function ProgramSection() {
       endTime: "04:00 PM",
       title: "Sufi Whirling workshop with Farima Berenji",
       location: "Dome",
+      images: [Farima],
       position: "right",
     },
     {
@@ -169,7 +177,7 @@ function ProgramSection() {
       endTime: "04:00 PM",
       title: "Emirati Heritage band – Al Aahaal",
       location: "Tree of Life",
-      images: [Heritage],
+      images: [HeritageBandAahaal],
       position: "left",
     },
     {
@@ -187,7 +195,8 @@ function ProgramSection() {
       endTime: "05:30 PM",
       title: "Emirati Heritage Band – Noban",
       location: "Market Place",
-      position: "right",
+      images: [HeritageBandNoban],
+      position: "left",
     },
     {
       date: "2024-11-23",
@@ -228,7 +237,7 @@ function ProgramSection() {
       date: "2024-11-23",
       startTime: "09:00 PM",
       endTime: "10:00 PM",
-      title: "Journeys of Light featuring Kamal Musallam, Lisa Gerard, Loire Cotler and Rasha Rizk",
+      title: " Kamal Musallam and Journeys of Light",
       location: "Main Stage",
       images: [JorneyImage],
       position: "left",
@@ -307,22 +316,24 @@ function ProgramSection() {
       position: "left",
   },
   {
+    date: "2024-11-24",
+    startTime: "04:00 PM",
+    endTime: "05:00 PM",
+    title: "Calligraphy workshop",
+    location: "Dome",
+    images: [CalligaraphyImage],
+    position: "left",
+},
+  {
       date: "2024-11-24",
       startTime: "04:00 PM",
       endTime: "04:30 PM",
       title: "Emirati Heritage band – Al Weliyah",
       location: "Tree of Life",
-      images: [Heritage],
+      images: [HeritageBandWeliyah],
       position: "right",
   },
-  {
-      date: "2024-11-24",
-      startTime: "04:00 PM",
-      endTime: "05:00 PM",
-      title: "Calligraphy workshop",
-      location: "Dome",
-      position: "left",
-  },
+  
   {
       date: "2024-11-24",
       startTime: "04:30 PM",
@@ -338,7 +349,7 @@ function ProgramSection() {
       endTime: "06:00 PM",
       title: "Emirati Heritage band – Al Liwah",
       location: "Market Place",
-      images: [Heritage],
+      images: [HeritageBandLiwah],
       position: "left",
   },
   {
@@ -365,7 +376,7 @@ function ProgramSection() {
       endTime: "07:30 PM",
       title: "Emirati Heritage band – Al Malad",
       location: "Main Stage",
-      images: [Heritage],
+      images: [HeritageBandMalad],
       position: "right",
   },
   {
@@ -618,7 +629,7 @@ function ProgramSection() {
         <div className="event-info">
           {renderEventContent(event, imageSize)}
           {event.images &&
-            event.startTime === filteredEvents[index + 1]?.startTime && event.endTime === filteredEvents[index + 1]?.endTime && window.innerWidth >= 768 &&
+            event.startTime === filteredEvents[index + 1]?.startTime && event.endTime === filteredEvents[index + 1]?.endTime && 
             renderEventContent(filteredEvents[index + 1], imageSize)}
         </div>
 
