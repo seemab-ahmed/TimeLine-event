@@ -461,6 +461,7 @@ h1 {
   }
   #day1 .timeline-entry.right.event-13 {
     margin-top: 26px;
+    display: none;
   }
   #day1 .timeline-entry.right.event-12 .time-label {
     margin: -26px 0px 0 -60px;
