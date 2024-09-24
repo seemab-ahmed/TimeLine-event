@@ -38,16 +38,16 @@ h1 {
 }
 
 .program-section {
-  padding: 100px 0 613px;
+  padding: 100px 0 100px;
 }
 
 #day1 {
-  max-height: 4100px;
+  max-height: 5000px;
     overflow: hidden;
     padding-top: 25px;
 }
 #day2 {
-  max-height: 4550px;
+  max-height: 5000px;
     overflow: hidden;
     padding-top: 25px;
 }
@@ -441,6 +441,18 @@ h1 {
   }
 }
 @media screen and (max-width: 767px) {
+
+  #day1 {
+    max-height: 4100px;
+      overflow: hidden;
+      padding-top: 25px;
+  }
+  #day2 {
+    max-height: 4550px;
+      overflow: hidden;
+      padding-top: 25px;
+  }
+
   .programe_image {
     margin-bottom: 40px;
     max-width: 184px;
