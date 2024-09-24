@@ -223,6 +223,9 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
+#day0 .timeline-entry.left.event-0 .time-label2 {
+  display: none;
+}
 #day1 .timeline-entry.left.event-4 {
   height: 450px !important;
 }
@@ -238,17 +241,70 @@ h1 {
 #day1 .timeline-entry.left.event-9 .time-label2 {
   display: none;
 }
+#day1 .timeline-entry.left.event-11 .time-label2 {
+  display: none;
+}
+#day1 .timeline-entry.left.event-1 .time-label , #day1 .timeline-entry.left.event-1 .time-label2 {
+  display: none;
+}
+#day1 .timeline-entry.left.event-3 .time-label , #day1 .timeline-entry.left.event-3 .time-label2 {
+  display: none;
+}
+#day1 .timeline-entry.right.event-7 .time-label , #day1 .timeline-entry.right.event-7 .time-label2 {
+  display: none;
+}
+#day2 .timeline-entry.right.event-2 .time-label {
+  display: none;
+}
 #day2 .timeline-entry.left.event-4 {
   margin-top: 100px;
 }
 #day2 .timeline-entry.right.event-3 {
   height: 600px !important;
 }
+#day2 .timeline-entry.left.event-5 .time-label ,#day2 .timeline-entry.left.event-5 .time-label2 {
+  display: none;
+}
+#day2 .timeline-entry.left.event-6 .time-label ,#day2 .timeline-entry.left.event-6 .time-label2 {
+  display: none;
+}
 #day2 .timeline-entry.right.event-9 {
   margin-top: 25px;
 }
 #day2 .timeline-entry.right.event-11 {
+  margin-top: 27px;
+}
+#day2 .timeline-entry.right.event-13 .time-label {
+  display: none;
+}
+#day2 .timeline-entry.left.event-12 {
   margin-top: 200px;
+}
+#day2 .timeline-entry.left.event-10 .time-label {
+  display: none;
+} 
+#day2 .timeline-entry.right.event-13 .time-label2 {
+  display: none;
+} 
+#day2 .timeline-entry.left.event-12 .time-label {
+  display: none;
+}
+#day2 .timeline-entry.right.event-11 .event-info {
+  position: relative;
+}
+#day2 .timeline-entry.right.event-11 .event-info::after {
+  content: "06:30PM";
+  font-size: 18px;
+  font-weight: 700;
+  color: #a2441b;
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  display: block;
+  position: absolute;
+  left: -141px;
+  bottom: -51px;
+  z-index: 1;
 }
 @media screen and (max-width: 1200px) {
   .programe_image {
@@ -278,9 +334,6 @@ h1 {
   .event-location {
     font-size: 16px;
     display: block;
-  }
-  #day2 .timeline-entry.right.event-9 {
-    margin-top: 173px;
   }
 
 }
@@ -368,6 +421,12 @@ h1 {
   }
   .timeline-entry.left {
     padding: 20px 70px 20px 20px;
+  }
+  #day2 .timeline-entry.right.event-11 .event-info::after {
+    font-size: 12px;
+    left: -90px;
+    bottom: -36px;
+    z-index: 1;
   }
 }
 @media screen and (max-width: 767px) {
@@ -464,24 +523,20 @@ h1 {
     display: none;
   }
   #day1 .timeline-entry.right.event-12 .time-label {
-    display: none;
     margin: -26px 0px 0 -60px;
   }
-  #day2 .timeline-entry.right.event-3 {
-    height: 320px !important;
-  }
+  #day1 .timeline-entry.left.event-14 {
+    margin-top: 256px;
+ }
   #day2 .timeline-entry.left.event-5 .time-label {
     margin: -33px 0px 0 0;
   }
   #day2 .timeline-entry.left.event-6 {
-    margin-top: -3px;
+    margin-top: 0;
   }
   #day2 .timeline-entry.left.event-4 {
-    margin-top: 45px;
+    margin-top: 113px;
   }
-  #day2 .timeline-entry.left.event-7 .time-label {
-    display: none;
-   }
   #day2 .timeline-entry.right.event-8 {
     margin-top: 26px;
   }
@@ -492,12 +547,14 @@ h1 {
     margin: -26px 0px 0 -60px;
   }
   #day2 .timeline-entry.left.event-12 {
-    margin-top: 26px;
+    margin-top: 190px;
   }
   #day2 .timeline-entry.left.event-12 .time-label {
    display: none;
   }
- 
+  #day2 .timeline-entry.right.event-11 {
+    margin-top: 25px;
+  }
   #day1 .timeline-entry.left.event-4 .time-label {
     right: 14px;
     margin: -33px 0px 0 0;
@@ -513,6 +570,17 @@ h1 {
  }
  #day1 .timeline-entry.left.event-10 {
   margin-top: -2px;
+ }
+ #day1 .timeline-entry.right.event-5 {
+  margin-top: -2px;
+}
+#day2 .timeline-entry.right.event-11 .event-info::after {
+  left: -70px;
+  bottom: -28px;
+  z-index: 1;
+  font-size: 10px;
+  max-width: 30px;
+  text-align: right;
  }
 }
 @media screen and (max-width: 440px) {
