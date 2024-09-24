@@ -40,6 +40,17 @@ h1 {
 .program-section {
   padding: 100px 0 613px;
 }
+
+#day1 {
+  max-height: 4100px;
+    overflow: hidden;
+    padding-top: 25px;
+}
+#day2 {
+  max-height: 4550px;
+    overflow: hidden;
+    padding-top: 25px;
+}
 .day-list {
   display: flex;
   flex-wrap: wrap;
@@ -435,7 +446,7 @@ h1 {
     max-width: 184px;
   }
   .program-section {
-    padding: 138px 0 740px;
+    padding: 138px 0 40px;
   }
   .day-link {
     padding: 4px 13px;
