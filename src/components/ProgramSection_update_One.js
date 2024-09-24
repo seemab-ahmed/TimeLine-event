@@ -392,7 +392,7 @@ function ProgramSection() {
       date: "2024-11-24",
       startTime: "09:30 PM",
       endTime: "09:45 PM",
-      title: "Bodour Al Qasimi",
+      title: "Closing Speech Bodour Al Qasimi",
       location: "Main Stage",
       images: [Bodour],
       position: "right",
