@@ -317,7 +317,7 @@ h1 {
   bottom: -51px;
   z-index: 1;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .programe_image {
     margin-bottom: 70px;
     max-width: 250px;
@@ -340,10 +340,10 @@ h1 {
   }
   
   .event-title {
-    font-size: 22px;
+    font-size: 18px;
   }
   .event-location {
-    font-size: 16px;
+    font-size: 14px;
     display: block;
   }
 
@@ -443,12 +443,12 @@ h1 {
 @media screen and (max-width: 767px) {
 
   #day1 {
-    max-height: 4100px;
+    max-height: 4300px;
       overflow: hidden;
       padding-top: 25px;
   }
   #day2 {
-    max-height: 4550px;
+    max-height: 4750px;
       overflow: hidden;
       padding-top: 25px;
   }

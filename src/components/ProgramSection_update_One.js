@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState , useEffect, useCallback } from 'react';
 import "../App.css";
 import {ReactComponent as ProgramImage} from '../assets/Program.svg';
 import SennyCamara from "../assets/SennyCamara.png";
@@ -518,17 +518,19 @@ function ProgramSection() {
     return duration * heightPerMinute;
   };
 
-  const calculateImageSize = (startTime, endTime) => {
+  const calculateImageSize = useCallback((startTime, endTime) => {
     const duration = calculateDuration(startTime, endTime); // Calculate duration in minutes
   
     if (window.innerWidth <= 768) {
       return 40; 
+    } else if (window.innerWidth <= 1280 && duration >= 60) {
+      return 100;
     }
   
     // Use dynamic size for larger screens
     const imageSize = duration >= 60 ? 160 : (duration / 60) * 160; // Proportional size for events < 1 hour
     return imageSize;
-  };
+  },[]);
 
 
   const renderEventData = (day) => {
