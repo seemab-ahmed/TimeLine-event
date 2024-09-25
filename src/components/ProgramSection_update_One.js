@@ -409,17 +409,19 @@ function ProgramSection() {
     
   ];
 
-  
 
   const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
   let marginOffset = 0
   useEffect(() => {
     const handleResize = () => {
-      setHeightPerMinute(window.innerWidth <= 768 ? 80 / 30 : 120 / 30);
+      setHeightPerMinute(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
     };
-
+  
     window.addEventListener('resize', handleResize);
-
+  
+    // Call handleResize once to set initial value on load or when screen is resized
+    handleResize();
+  
     // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
