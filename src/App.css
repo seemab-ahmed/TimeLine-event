@@ -226,6 +226,7 @@ h1 {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   max-width: 550px;
+  margin:0;
 }
 .event-location {
   font-size: 18px;
@@ -317,6 +318,19 @@ h1 {
   bottom: -51px;
   z-index: 1;
 }
+
+@media screen and (max-width: 1440px) {
+  .event-title {
+    font-size: 20px;
+  }
+  #day2 .timeline-entry.left.event-7 .event-content  {
+    max-width: 200px;
+  }
+  #day2 .timeline-entry.left.event-12 .event-content  {
+    max-width: 200px;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .programe_image {
     margin-bottom: 70px;
@@ -347,8 +361,16 @@ h1 {
     display: block;
   }
 
+  #day2 .timeline-entry.left.event-7 .event-content  {
+    max-width: 150px;
+  }
+  #day2 .timeline-entry.left.event-12 .event-content  {
+    max-width: 150px;
+  }
+
 }
-@media screen and (max-width: 992px) {
+
+@media screen and (max-width: 1025px) {
   .day-list {
     gap: 55px;
     padding-bottom: 26px;
@@ -359,6 +381,13 @@ h1 {
   }
   .event-title {
     font-size: 18px;
+  }
+
+  #day2 .timeline-entry.left.event-7 .event-content  {
+    max-width: 110px;
+  }
+  #day2 .timeline-entry.left.event-12 .event-content  {
+    max-width: 110px;
   }
   
   .event-location {
@@ -443,12 +472,12 @@ h1 {
 @media screen and (max-width: 767px) {
 
   #day1 {
-    max-height: 4300px;
+    max-height: 4700px;
       overflow: hidden;
       padding-top: 25px;
   }
   #day2 {
-    max-height: 4750px;
+    max-height: 4800px;
       overflow: hidden;
       padding-top: 25px;
   }

@@ -523,6 +523,8 @@ function ProgramSection() {
   
     if (window.innerWidth <= 768) {
       return 40; 
+    } else if (window.innerWidth <= 1440 && window.innerWidth >= 1280 && duration >= 60) {
+      return 130;
     } else if (window.innerWidth <= 1280 && duration >= 60) {
       return 100;
     }
