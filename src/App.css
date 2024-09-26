@@ -41,6 +41,10 @@ h1 {
   padding: 100px 0 100px;
 }
 
+a.day-link {
+  text-decoration: none;
+}
+
 #day1 {
   max-height: 5000px;
     overflow: hidden;
