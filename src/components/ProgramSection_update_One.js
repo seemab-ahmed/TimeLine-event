@@ -416,6 +416,7 @@ function ProgramSection() {
     const handleResize = () => {
       setHeightPerMinute(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
     };
+
   
     window.addEventListener('resize', handleResize);
   
@@ -428,47 +429,49 @@ function ProgramSection() {
     };
   }, []);
 
-  const timeToMinutes = (time) => {
-    const [hour, minutePart] = time.split(':');
-    const minutes = parseInt(minutePart.substr(0, 2), 10);
-    const isPM = minutePart.includes('PM');
-    let hours = parseInt(hour, 10);
-    if (isPM && hours !== 12) hours += 12;
-    if (!isPM && hours === 12) hours = 0; // Midnight correction for 12:00 AM
-    return hours * 60 + minutes;
-  };
+  // const timeToMinutes = (time) => {
+  //   const [hour, minutePart] = time.split(':');
+  //   const minutes = parseInt(minutePart.substr(0, 2), 10);
+  //   const isPM = minutePart.includes('PM');
+  //   let hours = parseInt(hour, 10);
+  //   if (isPM && hours !== 12) hours += 12;
+  //   if (!isPM && hours === 12) hours = 0; // Midnight correction for 12:00 AM
+  //   return hours * 60 + minutes;
+  // };
 
 
-  const groupEventsByTime = (events) => {
-    const groupedEvents = [];
-    events.forEach(event => {
-      const eventStart = timeToMinutes(event.startTime);
-      const eventEnd = timeToMinutes(event.endTime);
+  // const groupEventsByTime = (events) => {
+  //   const groupedEvents = [];
+  //   events.forEach(event => {
+  //     const eventStart = timeToMinutes(event.startTime);
+  //     const eventEnd = timeToMinutes(event.endTime);
       
-      // Check if this event overlaps with any existing group
-      let foundGroup = false;
-      for (const group of groupedEvents) {
-        const groupStart = timeToMinutes(group[0].startTime);
-        const groupEnd = timeToMinutes(group[group.length - 1].endTime);
+  //     // Check if this event overlaps with any existing group
+  //     let foundGroup = false;
+  //     for (const group of groupedEvents) {
+  //       const groupStart = timeToMinutes(group[0].startTime);
+  //       const groupEnd = timeToMinutes(group[group.length - 1].endTime);
         
-        if ((eventStart >= groupStart && eventStart < groupEnd) || (eventEnd > groupStart && eventEnd <= groupEnd)) {
-          group.push(event); // Add to the existing group
-          foundGroup = true;
-          break;
-        }
-      }
+  //       if ((eventStart >= groupStart && eventStart < groupEnd) || (eventEnd > groupStart && eventEnd <= groupEnd)) {
+  //         group.push(event); // Add to the existing group
+  //         foundGroup = true;
+  //         break;
+  //       }
+  //     }
   
-      if (!foundGroup) {
-        groupedEvents.push([event]); // Start a new group if no overlap found
-      }
-    });
+  //     if (!foundGroup) {
+  //       groupedEvents.push([event]); // Start a new group if no overlap found
+  //     }
+  //   });
     
-    return groupedEvents;
-  };
+  //   return groupedEvents;
+  // };
   // Helper function to check if two events overlap
+ 
+ 
   const doEventsOverlap = (event1, event2) => {
     const convertTo24Hour = (time) => {
-      const [hour, minute, period] = time.split(/[:\s]/);
+      const [hour, minute, period] = time?.split(/[:\s]/);
       let hours = parseInt(hour);
       if (period === "PM" && hours !== 12) {
         hours += 12;
@@ -558,7 +561,7 @@ function ProgramSection() {
     return timeToMinutes(a.startTime) - timeToMinutes(b.startTime);
   });
 
-  console.log(groupEventsByTime(sortedEvents));
+  // console.log(groupEventsByTime(sortedEvents));
   // Render the sorted events with calculated gaps between them
    marginOffset = 0
   const renderEventDataElements = [];
@@ -658,13 +661,14 @@ function ProgramSection() {
       <>
         {event.images &&
           event.images.length &&
-          event.images.map((image) => {
+          event.images.map((image, index) => {
             return (
               <div
+                key={index+22}
                 className="event-img-wrap"
                 style={{
                   width: `${imageSize}px`,
-                  height: `${imageSize}px`,
+                  height: 'auto',
                 }}
               >
                 <img
@@ -672,7 +676,7 @@ function ProgramSection() {
                   alt={event.title}
                   style={{
                     width: `${imageSize}px`,
-                    height: `${imageSize}px`,
+                    height: 'auto',
                   }}
                 />
               </div>
@@ -691,8 +695,6 @@ function ProgramSection() {
   // Ensure that days are in the correct format before converting them
   // const dates = days.map((day) => new Date(Date.parse(day)).toDateString());
   const dates = days.map((day) => new Date(day + 'T00:00:00').toDateString());
-  
-  console.log({ dates, activeTab, days });
   
   const handleTabClick = (index) => {
     setActiveTab(index);

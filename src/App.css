@@ -374,7 +374,7 @@ a.day-link {
 
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1080px) {
   .day-list {
     gap: 55px;
     padding-bottom: 26px;
