@@ -2,7 +2,6 @@ import React, { useState , useEffect, useCallback } from 'react';
 import "../App.css";
 import {ReactComponent as ProgramImage} from '../assets/Program.svg';
 
-import Ensemble from "../assets/Ensemble Khourchid_.png";
 import JorneyImage from "../assets/Journey of Light.png";
 import Bodour from "../assets/Bodour Al Qasimi_.png";
 
@@ -34,7 +33,7 @@ import SennyCamara from "../assets/Senny Camara.png";
 import Soundimmersion from "../assets/Sound Immersion_V2.png";
 import Ziyad from "../assets/Ziyad Sahhab Julien Breton.png";
 import Constantinople from "../assets/In the Footsteps of Rumi_V2.png"
-
+import Ensemble from "../assets/Whirling_V2.png";
 
 
 
