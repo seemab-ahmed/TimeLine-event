@@ -1,38 +1,45 @@
 import React, { useState , useEffect, useCallback } from 'react';
 import "../App.css";
 import {ReactComponent as ProgramImage} from '../assets/Program.svg';
-import SennyCamara from "../assets/SennyCamara.png";
-import maryMalifarges from "../assets/Mary Malifarges.png";
-import HandPanwithAnas from "../assets/handPan.png";
-import AnasHandPan from "../assets/ANSHandpan.png";
-import CalligaraphyImage from "../assets/CalliGraphy.png";
-import PoetryByNujoom from "../assets/PoetryByBujoom.png";
-import HasanHakmoun from "../assets/Hassanhakmoun.png";
-import Illumination from "../assets/Illumination.png";
-import SanduImage from "../assets/Sandu.png";
-import Seemawirling from "../assets/Sema Whirling.png";
-import BarakaBand from "../assets/BarakaBlue&ShadiBand.png";
-import HeritagebandNadba from "../assets/Heritage band - Al Nadba-Fri Nov 22 at 615 Main Stage.png";
-import HeritageBandAahaal from "../assets/Heritage band - Al Aahaal-Sat Nov 23 at 330 pm Tree of Life.png";
-import HeritageBandNoban from "../assets/Heritage band - Noban-Sat Nov 23 at 515 pm Marketplace.png";
-import HeritageBandWeliyah from "../assets/Heritage band - Al Wailyyah-Sun Nov 24 at 400 pm Tree of Life.png";
-import HeritageBandLiwah from "../assets/Heritage band - Al Liwah-Sun Nov 24 at 530 pm Marketplace.png";
-import HeritageBandMalad from "../assets/Heritage band - Al Malad-Sun Nov 24 at 700 pm Main Stage.png";
+
+import Ensemble from "../assets/Ensemble Khourchid_.png";
 import JorneyImage from "../assets/Journey of Light.png";
 import Bodour from "../assets/Bodour Al Qasimi_.png";
-import Ziyad from "../assets/Rumi’s Ziyad Sahab.png";
-import JulienBreton from "../assets/Calligraphy lighting Workshop with Julien Breton.png";
-import SamiYusuf from "../assets/Sami Yusuf (1).png";
-import Constantinople from "../assets/Constantinople & Ghalia Benali.png"
-import Farima from "../assets/Farima Berenji (1).png";
-import RushilQawali from "../assets/AbiSampaRushilOrchestralQawwali.png";
-import Soundimmersion from "../assets/Layer 2.png";
-import FadiRifaai from "../assets/Fadi Rifaai.png";
-import Ensemble from "../assets/Ensemble Khourchid_.png";
-import DhaferYousef from "../assets/Dhafer Youssef.png";
-import WalidAboulnaga from "../assets/Walid Aboulnaga.png";
 
-function ProgramSection() {
+// new imports 
+import RushilQawali from "../assets/Abi Sampa and Rushil Ranjan.png";
+import HandPanwithAnas from "../assets/Anas Alhalabi.png";
+import AnasHandPan from "../assets/Anas-Handpan-Orchestra_V2.png";
+import BarakaBand from "../assets/Baraka Blue and Shadi Band_V2_Nov23.png";
+import WalidAboulnaga from "../assets/Breathwork_V4.png";
+import CalligaraphyImage from "../assets/Calligraphy_V2_Nov24.png";
+import JulienBreton from "../assets/Calligraphy Lighting_V2_Nov24.png";
+import DhaferYousef from "../assets/Dhafer Youssef.png";
+import FadiRifaai from "../assets/Fadi Rifaai and Sandu & Zahi Saba_V3.png";
+import Farima from "../assets/Farima Berenji.png";
+import HasanHakmoun from "../assets/Hassan Hakmoun 24 V2.png";
+import HeritageBandAahaal from "../assets/Heritage Band Al Aahaal V1.png";
+import HeritageBandLiwah from "../assets/Heritage Band Al Liwah V1.png";
+import HeritageBandMalad from "../assets/Heritage Band Al Malad V1.png";
+import HeritagebandNadba from "../assets/Heritage Band Al Nadba V1.png";
+import HeritageBandWeliyah from "../assets/Heritage Band Al Waliyah V1.png";
+import HeritageBandNoban from "../assets/Heritage Band Noban V1.png";
+import Illumination from "../assets/Illumination-and-Geometry_V3_Nov23.png";
+import PoetryByNujoom from "../assets/Nujoom Al Ghanem.png";
+import SamiYusuf from "../assets/Sami-Yusuf.png";
+import SanduImage from "../assets/Sandu.png";
+import Seemawirling from "../assets/Sema Whirling_V2.png";
+import maryMalifarges from "../assets/Senny Camara Mary Malifarges_V2.png";
+import SennyCamara from "../assets/Senny Camara.png";
+import Soundimmersion from "../assets/Sound Immersion_V2.png";
+import Ziyad from "../assets/Ziyad Sahhab Julien Breton.png";
+import Constantinople from "../assets/In the Footsteps of Rumi_V2.png"
+
+
+
+
+
+
  
   const eventsData = [
     // Day 1 (2024-11-22)
@@ -60,7 +67,7 @@ function ProgramSection() {
       endTime: "08:30 PM",
       title: "Rumi’s Ziyad Sahab & Alifmotion Light Calligraphy by Julien Bruton",
       location: "Main Stage",
-      images: [Ziyad, JulienBreton],
+      images: [Ziyad/*, JulienBreton*/],
       position: "left",
     },
     {
@@ -186,7 +193,7 @@ function ProgramSection() {
       endTime: "05:00 PM",
       title: "Senny Camara & Art performer Mary Malifarges",
       location: "Tree of Life",
-      images: [SennyCamara, maryMalifarges],
+      images: [/*SennyCamara,*/ maryMalifarges],
       position: "left",
     },
     {
@@ -220,7 +227,7 @@ function ProgramSection() {
       date: "2024-11-23",
       startTime: "07:00 PM",
       endTime: "08:00 PM",
-      title: "Constantinople & Ghalia Benali",
+      title: "In the Footsteps of Rumi - Constantinople & Ghalia Benali",
       location: "Main Stage",
       images: [Constantinople],
       position: "left",
@@ -365,7 +372,7 @@ function ProgramSection() {
       date: "2024-11-24",
       startTime: "06:00 PM",
       endTime: "07:00 PM",
-      title: "Fadi Rifaai, Zahi and Sandu",
+      title: "Sufi Sound Journey - Fadi Rifaai, Zahi and Sandu",
       location: "Tree of Life",
       images: [FadiRifaai],
       position: "left",
@@ -408,26 +415,34 @@ function ProgramSection() {
   }
     
   ];
-
+  function ProgramSection() {
 
   const [heightPerMinute, setHeightPerMinute] = useState(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
   let marginOffset = 0
+  
+
+
   useEffect(() => {
     const handleResize = () => {
-      setHeightPerMinute(window.innerWidth <= 768 ? 150 / 30 : 150 / 30);
+      if (window.innerWidth <= 768) {
+        setHeightPerMinute(100 / 30); // Set height per minute for small screens
+      } else {
+        setHeightPerMinute(150 / 30); // Set height per minute for larger screens (example)
+      }
     };
-
   
+    // Add event listener for resize
     window.addEventListener('resize', handleResize);
   
-    // Call handleResize once to set initial value on load or when screen is resized
+    // Call the function once initially to set the correct value based on screen size
     handleResize();
   
-    // Cleanup event listener on component unmount
+    // Cleanup listener on unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
 
   // const timeToMinutes = (time) => {
   //   const [hour, minutePart] = time.split(':');

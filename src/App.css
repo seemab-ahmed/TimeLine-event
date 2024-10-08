@@ -323,6 +323,47 @@ a.day-link {
   z-index: 1;
 }
 
+#day0 .timeline-entry.right.event-5 .event-img-wrap {
+  max-width: 150px;
+}
+#day0 .timeline-entry.right.event-5 .event-img-wrap img {
+  width: 100%;
+}
+#day1 .timeline-entry.right.event-17 .event-img-wrap {
+  max-width: 150px;
+}
+#day1 .timeline-entry.right.event-17 .event-img-wrap img {
+  width: 100%;
+}
+
+#day1 .timeline-entry.right.event-5:before {
+  display: none;
+}
+#day1 .timeline-entry.left.event-4:before {
+  display: none;
+}
+#day1 .timeline-entry.right.event-6:after {
+  display: none;
+}
+#day1 .timeline-entry.left.event-8:before {
+  display: none;
+}
+#day1 .timeline-entry.right.event-7:after {
+  display: none;
+}
+#day2 .timeline-entry.right.event-3:after {
+  display: none;
+}
+#day2 .timeline-entry.left.event-5:after {
+  display: none;
+}
+#day2 .timeline-entry.right.event-8::before,
+#day2 .timeline-entry.right.event-8::after {
+  display: none;
+}
+#day2 .timeline-entry.left.event-10::after {
+  display: none;
+}
 @media screen and (max-width: 1440px) {
   .event-title {
     font-size: 20px;
