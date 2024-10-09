@@ -2,7 +2,7 @@ import React, { useState , useEffect, useCallback } from 'react';
 import "../App.css";
 import {ReactComponent as ProgramImage} from '../assets/Program.svg';
 
-import JorneyImage from "../assets/Journey of Light.png";
+import JorneyImage from "../assets/Kamal&JourneysofLight.png";
 import Bodour from "../assets/Bodour Al Qasimi_.png";
 
 // new imports 
